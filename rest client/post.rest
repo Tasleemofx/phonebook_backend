@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/contacts
+Content-Type: application/json
+
+{
+    "name": "Adewale Momanzer Posteli",
+    "number": "098-097-98765454"
+}
