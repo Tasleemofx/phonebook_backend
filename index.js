@@ -1,9 +1,12 @@
 const express = require('express')
 let contacts = require('./contacts')
 const morgan = require('morgan')
+const cors = require('cors')
 const app = express();
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(cors())
+// app.use(static('build'))
 
 
 app.get("/info",(request, response)=>{
@@ -64,7 +67,7 @@ app.delete('/api/contacts/:id', (request,response)=>{
 
 
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT, ()=>{
     console.log(`code now running on port ${PORT}`)
 })
