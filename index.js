@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json())
 app.use(morgan('tiny'))
 app.use(cors())
-app.use(static('build'))
+app.use(express.static('build'))
 
 
 app.get("/info",(request, response)=>{
